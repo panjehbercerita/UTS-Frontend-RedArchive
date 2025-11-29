@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE ARCHIVE - NOIR EDITION</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>[ RED ARCHIVE ]</h1>
+      <p class="subtitle">Database Literatur Terlarang</p>
+
+      <nav style="margin-top: 1.5rem">
+        <button id="btnList" onclick="showPage('list')" class="tab-btn active">
+          DATABASE
+        </button>
+        <button id="btnInput" onclick="showPage('input')" class="tab-btn">
+          INPUT DATA
+        </button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="archive-section">
+        <h3 class="section-title">DATABASE ARSIP</h3>
+
+        <div class="search-box" style="margin-bottom: 25px">
+          <input
+            type="text"
+            id="searchBook"
+            placeholder="[ CARI DATA ARSIP... ]"
+            style="
+              width: 100%;
+              border: 1px solid #333;
+              padding: 12px;
+              background: rgba(0, 0, 0, 0.3);
+              color: white;
+              font-family: inherit;
+            "
+          />
+        </div>
+
+        <div class="card-container" id="bookList"></div>
+      </section>
+
+      <section class="input-section" style="display: none">
+        <h3 class="section-title">INPUT DATA BARU</h3>
+        <div class="form-box">
+          <form id="bookForm">
+            <div class="form-group">
+              <label for="title">JUDUL BUKU</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="Ketik judul di sini..."
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="author">PENULIS / TAHUN</label>
+              <input
+                type="text"
+                id="author"
+                placeholder="Misal: Soe Hok Gie"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="status">STATUS</label>
+              <select id="status">
+                <option value="BANNED">TERLARANG</option>
+                <option value="RESTRICTED">DALAM PENGAWASAN</option>
+                <option value="AVAILABLE">BEREDAR</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="desc">SINOPSIS SINGKAT</label>
+              <textarea
+                id="desc"
+                rows="3"
+                placeholder="Catatan singkat..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">REKAM JEJAK >></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

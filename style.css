@@ -1,0 +1,205 @@
+:root {
+  --bg-color: #050505;
+  --text-main: #c0c0c0;
+  --blood-red: #8a0303;
+  --alert-red: #ff0000;
+  --border-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.main-header h1 {
+  color: white;
+  border-bottom: 2px solid var(--blood-red);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.section-title {
+  color: #888;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--blood-red);
+  padding-left: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.book-card {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(5, 5, 5, 1) 100%
+  );
+  transition: all 0.3s ease;
+}
+.book-card:hover {
+  border-color: var(--alert-red);
+  box-shadow: 6px 6px 0px var(--blood-red);
+  transform: translate(-3px, -3px);
+}
+.book-title {
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+.book-author {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.book-desc {
+  font-size: 0.85rem;
+  color: #888;
+}
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border: 1px solid var(--blood-red);
+  color: var(--blood-red);
+  background: rgba(0, 0, 0, 0.5);
+}
+.btn-delete {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-delete:hover {
+  color: var(--alert-red);
+}
+
+.form-box {
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-weight: bold;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: white;
+  font-family: inherit;
+  padding: 0.5rem 0;
+  outline: none;
+  transition: 0.3s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-bottom: 1px solid var(--alert-red);
+}
+select option {
+  background-color: black;
+  color: white;
+}
+.btn-submit {
+  width: 100%;
+  background: transparent;
+  border: 2px solid var(--blood-red);
+  color: var(--blood-red);
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+.btn-submit:hover {
+  background: var(--blood-red);
+  color: black;
+  box-shadow: 0 0 15px rgba(138, 3, 3, 0.5);
+}
+
+/* --- STYLE TOMBOL NAVIGASI --- */
+.tab-btn {
+  background: transparent;
+  border: 1px solid #555;
+  color: #888;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  border-color: var(--blood-red);
+  color: white;
+}
+
+/* Jika tombol sedang aktif */
+.tab-btn.active {
+  background: var(--blood-red);
+  border-color: var(--blood-red);
+  color: white;
+  box-shadow: 0 0 10px rgba(138, 3, 3, 0.5);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+}
